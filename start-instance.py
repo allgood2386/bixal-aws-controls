@@ -22,7 +22,6 @@ argsdict = vars(args)
 ec2 = boto3.resource('ec2',
                      region_name=argsdict['region'])
 
-response = dict()
 for arg in argsdict['AWS-EC2-IDS']:
     instance = ec2.Instance(arg)
     instance.start()
